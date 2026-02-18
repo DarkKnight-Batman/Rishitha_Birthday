@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Rishitha | Heavenly Vibes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;700&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #0f172a; /* Deep night sky base */
+            overflow-x: hidden;
+            margin: 0;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* Celestial Background with God Rays */
+        .heavenly-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #1e293b 0%, #334155 40%, #7c3aed 100%);
+            z-index: -2;
+        }
+
+        .god-rays {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate rays 20s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes rays {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* CSS Clouds */
+        .cloud {
+            position: absolute;
+            background: #fff;
+            filter: blur(50px);
+            opacity: 0.3;
+            border-radius: 50%;
+            z-index: -1;
+            animation: float-clouds 30s linear infinite;
+        }
+
+        @keyframes float-clouds {
+            from { transform: translateX(-20vw); }
+            to { transform: translateX(110vw); }
+        }
+
+        .cursive { font-family: 'Dancing Script', cursive; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* Floating Feathers */
+        .feather {
+            position: fixed;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(110vh) translateX(100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* The Halo */
+        .halo-ring {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 160px;
+            height: 50px;
+            border-radius: 50%;
+            border: 6px solid #fbbf24;
+            box-shadow: 0 0 30px #fbbf24, inset 0 0 20px #fbbf24;
+            animation: hover 3s ease-in-out infinite;
+            z-index: 20;
+        }
+
+        @keyframes hover {
+            0%, 100% { transform: translateX(-50%) translateY(0) rotateX(70deg); }
+            50% { transform: translateX(-50%) translateY(-20px) rotateX(70deg); }
+        }
+
+        /* Attractive Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Photo Frame */
+        .photo-container {
+            position: relative;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            transform: rotate(-2deg);
+            transition: all 0.5s ease;
+        }
+        .photo-container:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.5);
+        }
+
+        .btn-magic {
+            background: linear-gradient(45deg, #f59e0b, #ec4899);
+            transition: all 0.3s ease;
+        }
+        .btn-magic:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.6);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center py-16 px-6">
+
+    <div class="heavenly-bg"></div>
+    <div class="god-rays"></div>
+    
+    <!-- Moving Clouds Decor -->
+    <div class="cloud w-64 h-32 top-10 left-[-10%]" style="animation-delay: 0s;"></div>
+    <div class="cloud w-96 h-48 top-60 left-[-20%]" style="animation-delay: -10s;"></div>
+    <div class="cloud w-80 h-40 bottom-20 left-[-15%]" style="animation-delay: -20s;"></div>
+
+    <div id="feather-container"></div>
+
+    <div class="max-w-2xl w-full text-center relative z-10">
+        
+        <!-- Heading -->
+        <div class="mb-16 relative">
+            <div class="halo-ring"></div>
+            <h1 class="serif text-5xl md:text-7xl font-black text-white drop-shadow-2xl mb-4 tracking-tight">
+                Happy Birthday
+            </h1>
+            <h2 class="cursive text-7xl md:text-9xl text-amber-300 drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]">
+                Rishitha
+            </h2>
+        </div>
+
+        <!-- Photo Section -->
+        <div class="relative flex justify-center mb-16">
+            <!-- Wings using SVG -->
+            <div class="absolute inset-0 flex items-center justify-center -z-10 opacity-60">
+                <svg width="500" height="300" viewBox="0 0 500 300" class="drop-shadow-[0_0_15px_white]">
+                    <path d="M250,150 C150,50 50,100 20,200 C50,250 150,220 250,150 Z" fill="white" transform="translate(0, 0)" />
+                    <path d="M250,150 C350,50 450,100 480,200 C450,250 350,220 250,150 Z" fill="white" transform="translate(0, 0)" />
+                </svg>
+            </div>
+
+            <div class="photo-container max-w-xs w-full">
+                <div class="bg-slate-200 w-full aspect-[4/5] flex items-center justify-center overflow-hidden rounded-sm relative">
+                    <img id="main-img" src="https://via.placeholder.com/400x500?text=Upload+Angel+Photo" alt="Rishitha" class="w-full h-full object-cover">
+                    <div id="upload-overlay" class="absolute inset-0 flex flex-col items-center justify-center bg-black/50 p-6 text-center cursor-pointer group" onclick="document.getElementById('img-input').click()">
+                        <p class="text-white font-bold text-lg mb-2 group-hover:scale-110 transition">Put Her Picture Here ✨</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-amber-400"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                    </div>
+                    <input type="file" id="img-input" class="hidden" accept="image/*" onchange="previewImage(this)">
+                </div>
+                <div class="mt-4 text-slate-900 font-bold italic text-xl">"Our favorite hungry angel"</div>
+            </div>
+        </div>
+
+        <!-- Sarcastic Card -->
+        <div class="glass-card rounded-3xl p-10 mb-12 text-left relative overflow-hidden border-t-4 border-amber-400">
+            <div class="absolute top-0 right-0 p-6 opacity-30 text-5xl">🍕</div>
+            <p class="text-2xl leading-relaxed font-medium">
+                "Happy Birthday, Rishitha! We know you're technically an angel, but we also know you'd trade your wings for a <strong>double-cheese pizza</strong> in a heartbeat. May your day be full of healthy choices (like choosing the biggest slice) and enough sarcasm to keep us all humble. Stay wonderful and stay hungry!"
+            </p>
+            
+            <div class="mt-10 flex flex-wrap gap-3">
+                <span class="bg-white/20 px-5 py-2 rounded-full text-sm font-bold border border-white/30">🥗 Salad Hater</span>
+                <span class="bg-white/20 px-5 py-2 rounded-full text-sm font-bold border border-white/30">🍕 Pizza Connoisseur</span>
+                <span class="bg-white/20 px-5 py-2 rounded-full text-sm font-bold border border-white/30">😇 Chief Angel</span>
+                <span class="bg-white/20 px-5 py-2 rounded-full text-sm font-bold border border-white/30">🙄 Sarcasm Queen</span>
+            </div>
+        </div>
+
+        <!-- Action Button -->
+        <button onclick="celestialParty()" class="btn-magic text-white font-black py-5 px-12 rounded-full text-2xl shadow-2xl active:scale-95 mb-8">
+            Summon the Cake! 🍰
+        </button>
+        
+        <div id="party-msg" class="hidden animate-pulse text-amber-300 font-black text-3xl mt-6 tracking-widest">
+            CALORIES DON'T COUNT TODAY! 🕊️✨
+        </div>
+
+        <footer class="mt-24 text-white/30 text-xs tracking-widest uppercase">
+            Reserved for Rishitha's Heaven on Earth.
+        </footer>
+    </div>
+
+    <script>
+        // Generate Feathers
+        const container = document.getElementById('feather-container');
+        for (let i = 0; i < 25; i++) {
+            const feather = document.createElement('div');
+            feather.className = 'feather';
+            feather.innerHTML = `
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2C12 2 12 6 8 10C4 14 4 22 12 22C20 22 20 14 16 10C12 6 12 2 12 2Z" fill="white" opacity="0.8"/>
+                </svg>
+            `;
+            feather.style.left = Math.random() * 100 + 'vw';
+            feather.style.animationDuration = (6 + Math.random() * 10) + 's';
+            feather.style.animationDelay = (Math.random() * 5) + 's';
+            feather.style.width = (15 + Math.random() * 20) + 'px';
+            container.appendChild(feather);
+        }
+
+        function celestialParty() {
+            document.getElementById('party-msg').classList.remove('hidden');
+            
+            for(let i=0; i<50; i++) {
+                setTimeout(() => {
+                    const spark = document.createElement('div');
+                    spark.style.position = 'fixed';
+                    spark.style.left = '50%';
+                    spark.style.top = '70%';
+                    spark.style.fontSize = '30px';
+                    spark.innerText = ['🍕', '🍰', '🍟', '🥙', '✨', '☁️'][Math.floor(Math.random()*6)];
+                    spark.style.zIndex = '100';
+                    spark.style.pointerEvents = 'none';
+                    document.body.appendChild(spark);
+                    
+                    const angle = Math.random() * Math.PI * 2;
+                    const dist = 100 + Math.random() * 250;
+                    const tx = Math.cos(angle) * dist;
+                    const ty = Math.sin(angle) * dist - 200;
+                    
+                    spark.animate([
+                        { transform: 'translate(-50%, -50%) scale(0) rotate(0deg)', opacity: 1 },
+                        { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(1.5) rotate(720deg)`, opacity: 0 }
+                    ], {
+                        duration: 1500 + Math.random() * 1000,
+                        easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
+                    }).onfinish = () => spark.remove();
+                }, i * 20);
+            }
+        }
+
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('main-img').src = e.target.result;
+                    document.getElementById('upload-overlay').style.display = 'none';
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>
